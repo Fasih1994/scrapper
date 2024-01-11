@@ -8,8 +8,10 @@ import pandas as pd
 import json
 import os
 
-if datetime(2024,1,1)> datetime.now():
-    print('Licensed Expire!')
+
+t1 = datetime.now()
+if t1 > datetime(2025,1,1) :
+    print('Driver Licensed Expired!')
     exit(0)
 
 def get_ids(html):
