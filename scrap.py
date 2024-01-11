@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup as bs
 import time
 from datetime import datetime, date
@@ -26,7 +27,7 @@ def read_file(json_pah):
 
 def check_exists_by_xpath(xpath):
     try:
-        driver.find_element_by_xpath(xpath)
+        driver.find_element(By.XPATH, xpath)
     except NoSuchElementException:
         return False
     return True
@@ -38,7 +39,7 @@ def scrap(No,RUC, Razón_social, Nombre_comercial, Fecha_corte):
     while True:
         try:
             element = 'sub_tbody'
-            sub_tbody = driver.find_element_by_xpath('/html/body/div[4]/div[2]/div/mat-dialog-container/sri-modal-mostrar-detalle-deudas-ranking/div/div[2]/div[1]/p-datatable/div/div[2]/table/tbody')
+            sub_tbody = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/mat-dialog-container/sri-modal-mostrar-detalle-deudas-ranking/div/div[2]/div[1]/p-datatable/div/div[2]/table/tbody')
             sub_soup = bs(sub_tbody.get_attribute('innerHTML'),"html.parser")
             sub_trs = sub_soup.find_all('tr')
 
@@ -72,7 +73,7 @@ def scrap(No,RUC, Razón_social, Nombre_comercial, Fecha_corte):
 
 
             element="sub_next_btn"
-            sub_next_btn = driver.find_element_by_xpath('/html/body/div[4]/div[2]/div/mat-dialog-container/sri-modal-mostrar-detalle-deudas-ranking/div/div[2]/div[1]/p-datatable/div/p-paginator/div/a[3]')
+            sub_next_btn = driver.find_element(By.XPATH,'/html/body/div[4]/div[2]/div/mat-dialog-container/sri-modal-mostrar-detalle-deudas-ranking/div/div[2]/div[1]/p-datatable/div/p-paginator/div/a[3]')
             if "ui-state-disabled" in sub_next_btn.get_attribute('class'):
                 break
             else:
@@ -97,7 +98,7 @@ def scrap(No,RUC, Razón_social, Nombre_comercial, Fecha_corte):
                 break
 
     element='cancel_btn'
-    cancel_btn = driver.find_element_by_xpath('//*[@id="tabla-mostrar-deuda"]')
+    cancel_btn = driver.find_element(By.XPATH,'//*[@id="tabla-mostrar-deuda"]')
     cancel_btn.click()
     overlay_open=False
     time.sleep(1)
@@ -141,11 +142,11 @@ while True:
 
     try:
         if row_count==1:
-            data_btn = driver.find_element_by_xpath('//*[@id="sribody"]/sri-root/div/div[2]/div/div/sri-consulta-ranking-deudas-web-app/div/sri-ruta-mostrar-ranking-deudas/div[1]/div[1]/div[4]/button')
+            data_btn = driver.find_element(By.XPATH,'//*[@id="sribody"]/sri-root/div/div[2]/div/div/sri-consulta-ranking-deudas-web-app/div/sri-ruta-mostrar-ranking-deudas/div[1]/div[1]/div[4]/button')
             time.sleep(0.1)
             data_btn.click()
         element='tbody'
-        tbody = driver.find_element_by_xpath('//*[@id="sribody"]/sri-root/div/div[2]/div/div/sri-consulta-ranking-deudas-web-app/div/sri-ruta-mostrar-ranking-deudas/div[1]/div[2]/div/div[2]/div[2]/sri-mostrar-tabla-deudas/div/p-datatable/div/div[2]/table/tbody')
+        tbody = driver.find_element(By.XPATH,'//*[@id="sribody"]/sri-root/div/div[2]/div/div/sri-consulta-ranking-deudas-web-app/div/sri-ruta-mostrar-ranking-deudas/div[1]/div[2]/div/div[2]/div[2]/sri-mostrar-tabla-deudas/div/p-datatable/div/div[2]/table/tbody')
         soup = bs(tbody.get_attribute('innerHTML'),"html.parser")
         trs = soup.find_all('tr')
 
@@ -161,7 +162,7 @@ while True:
                 i= data['scraped_count']%10 +1
 
                 element='detail_btn'
-                detail_btn = driver.find_element_by_xpath(f'//*[@id="sribody"]/sri-root/div/div[2]/div/div/sri-consulta-ranking-deudas-web-app/div/sri-ruta-mostrar-ranking-deudas/div[1]/div[2]/div/div[2]/div[2]/sri-mostrar-tabla-deudas/div/p-datatable/div/div[2]/table/tbody/tr[{i}]/td[7]/span[2]/div/button')
+                detail_btn = driver.find_element(By.XPATH,f'//*[@id="sribody"]/sri-root/div/div[2]/div/div/sri-consulta-ranking-deudas-web-app/div/sri-ruta-mostrar-ranking-deudas/div[1]/div[2]/div/div[2]/div[2]/sri-mostrar-tabla-deudas/div/p-datatable/div/div[2]/table/tbody/tr[{i}]/td[7]/span[2]/div/button')
                 detail_btn.click()
                 overlay_open=True
                 time.sleep(0.5)
@@ -178,7 +179,7 @@ while True:
 
 
         element = "next_btn"
-        next_btn = driver.find_element_by_xpath('//*[@id="sribody"]/sri-root/div/div[2]/div/div/sri-consulta-ranking-deudas-web-app/div/sri-ruta-mostrar-ranking-deudas/div[1]/div[2]/div/div[2]/div[2]/sri-mostrar-tabla-deudas/div/p-datatable/div/p-paginator/div/a[3]')
+        next_btn = driver.find_element(By.XPATH,'//*[@id="sribody"]/sri-root/div/div[2]/div/div/sri-consulta-ranking-deudas-web-app/div/sri-ruta-mostrar-ranking-deudas/div[1]/div[2]/div/div[2]/div[2]/sri-mostrar-tabla-deudas/div/p-datatable/div/p-paginator/div/a[3]')
         if "ui-state-disabled" in next_btn.get_attribute('class'):
             data.pop('scraped_count')
             pd.DataFrame(data).to_csv(path,index=False)
@@ -203,7 +204,7 @@ while True:
             if retries<3:
                 if check_exists_by_xpath('/html/body/div[4]/div[2]/div/mat-dialog-container/sri-modal-mostrar-detalle-deudas-ranking/div/div[2]/div[1]/p-datatable/div/div[2]/table/tbody'):
                     element = 'cancel_btn'
-                    cancel_btn = driver.find_element_by_xpath('//*[@id="tabla-mostrar-deuda"]')
+                    cancel_btn = driver.find_element(By.XPATH,'//*[@id="tabla-mostrar-deuda"]')
                     cancel_btn.click()
 
                 print(f"retries: {retries} for click")
