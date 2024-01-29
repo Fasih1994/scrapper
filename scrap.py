@@ -81,9 +81,9 @@ def scrap(No,RUC, Razón_social, Nombre_comercial, Fecha_corte):
             else:
                 sub_next_btn.click()
 
-            time.sleep(0.1)
+            time.sleep(0.3)
         except NoSuchElementException:
-            if sub_retries<3:
+            if sub_retries<10:
                 time.sleep(1)
                 sub_retries+=1
 #                 print(f"sub_retries: {sub_retries} for no element")
