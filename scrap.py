@@ -194,16 +194,16 @@ while True:
             time.sleep(0.3)
             page_count+=1
     except NoSuchElementException:
-        if retries<3:
+        if retries<10:
             retries+=1
             print(f"retries: {retries} for element '{element}'")
             time.sleep(1)
-        elif retries==3:
+        elif retries==11:
             print("Session Expired, Start a new session!")
             write(json_path, data)
             break
     except ElementClickInterceptedException:
-            if retries<3:
+            if retries<10:
                 if check_exists_by_xpath('/html/body/div[4]/div[2]/div/mat-dialog-container/sri-modal-mostrar-detalle-deudas-ranking/div/div[2]/div[1]/p-datatable/div/div[2]/table/tbody'):
                     element = 'cancel_btn'
                     cancel_btn = driver.find_element(By.XPATH,'//*[@id="tabla-mostrar-deuda"]')
@@ -212,7 +212,7 @@ while True:
                 print(f"retries: {retries} for click")
                 retries+=1
                 time.sleep(1)
-            elif retries==3:
+            elif retries==11:
                 print("Session Expired, Start a new session!")
                 write(json_path, data)
                 break
