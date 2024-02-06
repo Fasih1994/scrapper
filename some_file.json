@@ -1,0 +1,157 @@
+{
+  "No": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "RUC": [
+    "0490001883001",
+    "1091752561001",
+    "0491500611001",
+    "0400646774001",
+    "1091731203001",
+    "0400819702001",
+    "0401682216001",
+    "0491533751001",
+    "1091756702001"
+  ],
+  "Raz\u00f3n_social": [
+    "COOPERATIVA DE AHORRO Y CREDITO PABLO MU\u00d1OZ VEGA LTDA.",
+    "CONSTRUCCION CONSULTORIA Y FISCALIZACION \"FUERTES & FUERTES\" INCOPLANI CIA. LTDA.",
+    "CAMPO FERTIL",
+    "MARTINEZ MENA JORGE IZAC",
+    "SOCIEDAD CIVIL Y COMERCIAL ESTACION DE SERVICIOS CASTRO HERMANOS S.C.C.",
+    "ERAZO CARVAJAL SHELY XIMENA",
+    "AREVALO TANICUCHI JONATHAN JAVIER",
+    "SOCIEDAD CIVIL ANONIMA AGRO LA ESTRELLITA S.C.A.",
+    "TRANSPORTE Y OPERACIONES INTERNACIONALES TOILOGISTIC S.A."
+  ],
+  "Nombre_comercial": [
+    "N/A",
+    "N/A",
+    "N/A",
+    "N/A",
+    "N/A",
+    "N/A",
+    "N/A",
+    "N/A",
+    "N/A"
+  ],
+  "Fecha_corte": [
+    "07/02/2024",
+    "07/02/2024",
+    "07/02/2024",
+    "07/02/2024",
+    "07/02/2024",
+    "07/02/2024",
+    "07/02/2024",
+    "07/02/2024",
+    "07/02/2024"
+  ],
+  "Provincia": [
+    "CARCHI",
+    "CARCHI",
+    "CARCHI",
+    "CARCHI",
+    "CARCHI",
+    "CARCHI",
+    "CARCHI",
+    "CARCHI",
+    "CARCHI"
+  ],
+  "Impuesto": [
+    "RENTA SOCIEDADES",
+    "RENTA SOCIEDADES",
+    "RENTA SOCIEDADES",
+    "RENTA PERSONAS NATURALES",
+    "RENTA SOCIEDADES",
+    "RENTA PERSONAS NATURALES",
+    "IMPUESTO A LA SALIDA DE DIVISAS",
+    "RENTA SOCIEDADES",
+    "RENTA SOCIEDADES"
+  ],
+  "Periodo": [
+    "2022",
+    "2022",
+    "2022",
+    "2022",
+    "2022",
+    "2022",
+    "2020",
+    "2022",
+    "2019"
+  ],
+  "Saldo_impuesto": [
+    " $90,723.52 ",
+    " $13,947.70 ",
+    " $16,966.15 ",
+    " $9,608.91 ",
+    " $8,010.02 ",
+    " $5,806.87 ",
+    " $3,199.89 ",
+    " $4,593.77 ",
+    " $4,483.06 "
+  ],
+  "Saldo_inter\u00e9s": [
+    " $751.19 ",
+    " $1,074.14 ",
+    " $0.00 ",
+    " $79.56 ",
+    " $66.32 ",
+    " $48.08 ",
+    " $1,215.36 ",
+    " $38.04 ",
+    " $0.00 "
+  ],
+  "Saldo_multa": [
+    " $0.00 ",
+    " $4,370.60 ",
+    " $0.00 ",
+    " $0.00 ",
+    " $0.00 ",
+    " $0.00 ",
+    " $0.00 ",
+    " $0.00 ",
+    " $0.00 "
+  ],
+  "Saldo_recargo": [
+    " $0.00 ",
+    " $0.00 ",
+    " $0.00 ",
+    " $0.00 ",
+    " $0.00 ",
+    " $0.00 ",
+    " $639.98 ",
+    " $0.00 ",
+    " $0.00 "
+  ],
+  "Saldo_deuda": [
+    " $91,474.71 ",
+    " $19,392.44 ",
+    " $16,966.15 ",
+    " $9,688.47 ",
+    " $8,076.34 ",
+    " $5,854.95 ",
+    " $5,055.23 ",
+    " $4,631.81 ",
+    " $4,483.06 "
+  ],
+  "Fecha_emisi\u00f3n": [
+    "2023-08-29",
+    "2023-10-29",
+    "2023-04-03",
+    "2023-06-22",
+    "2023-04-28",
+    "2023-03-28",
+    "2022-06-29",
+    "2023-04-03",
+    "2023-01-22"
+  ],
+  "scraped_count": 9
+}

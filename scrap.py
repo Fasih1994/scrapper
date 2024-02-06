@@ -90,7 +90,7 @@ def scrap(No,RUC, Razón_social, Nombre_comercial, Fecha_corte):
             else:
                 break
         except ElementClickInterceptedException:
-            if sub_retries<3:
+            if sub_retries<10:
                 sub_retries+=1
 #                 print(f"sub_retries: {sub_retries} for click")
                 time.sleep(1)
